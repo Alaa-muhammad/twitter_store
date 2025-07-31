@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مرحبا في تويتر ستور </title>
+     <style>
+        
+            body {
+                font-family: 'Tahoma', sans-serif;
+                text-align: center;
+                padding: 20px;
+                background-color: #f9f9f9;
+                line-height: 1.6;
+                margin: 0;
+            }
+        
+            .header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 20px;
+            }
+
+            .logo {
+                max-width: 80px;
+                height: auto;
+            }
+
+            h1 {
+                color: #1DA1F2;
+                margin: 0;
+                flex-grow: 1;
+                text-align: center;
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 18px;
+                margin-bottom: 15px;
+            }
+
+            .container {
+                max-width: 500px;
+                margin: 0 auto; 
+                background: white;
+                padding: 30px;
+                border-radius: 15px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                position: center; 
+                right: auto; 
+                left: auto; 
+                float: none; 
+            }
+            
+            .wifi-box {
+                background: #f0f8ff;
+                padding: 20px;
+                border-radius: 10px;
+                margin: 25px 0;
+                border: 1px dashed #4b9cd3;
+            }
+            
+            .social-btn {
+                color: white;
+                padding: 12px 15px;
+                border-radius: 25px;
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 10px auto;
+                font-weight: bold;
+                transition: all 0.3s ease;
+                width: 220px;
+                text-align: center;
+            }
+            
+            .social-btn img {
+                width: 20px;
+                height: 20px;
+                margin-left: 8px;
+            }
+            
+            .instagram-btn {
+                background: #e1306c;
+            }
+            
+            .facebook-btn {
+                background: #1877f2;
+            }
+            
+            .tiktok-btn {
+                background: #000000;
+            }
+            
+            .whatsapp-btn {
+                background: #25D366;
+            }
+            
+            .wifi-btn {
+                background: #1DA1F2;
+                cursor: pointer;
+            }
+            
+            .social-btn:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+            
+            .scan-date {
+                color: #666;
+                font-size: 14px;
+                margin-top: 30px;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="/images/logo_trans.png" alt="شعار تويتر ستور" class="logo">
+            <h1>أهلاً وسهلاً في تويتر ستور</h1>
+        </div>
+        
+        <div class="social">
+            <h2>تواصل معنا عبر</h2>
+            
+            <a href="https://www.instagram.com/twitter.store?igsh=YXhlYndlNWZ2eDRn" class="social-btn instagram-btn">
+                إنستغرام
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/1024px-Instagram_logo_2016.svg.png" alt="Instagram">
+            </a>
+
+            <a href="https://www.facebook.com/share/19WRjqE4gR/" class="social-btn facebook-btn">
+                فيسبوك
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1024px-Facebook_f_logo_%282019%29.svg.png" alt="Facebook">
+            </a>
+
+            <a href="https://www.tiktok.com/@twitter.store.ramallah?_t=ZS-8yUUGwD0d7o&_r=1" class="social-btn tiktok-btn">
+                تيك توك
+                <img src="/images/t.png" alt="TikTok">
+            </a>
+            
+            <a href="https://wa.me/972568202122" class="social-btn whatsapp-btn">
+                واتساب
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1024px-WhatsApp.svg.png" alt="WhatsApp">
+            </a>
+            
+            <div onclick="connectWifi()" class="social-btn wifi-btn">
+                اتصل بالواي فاي
+                
+            </div>
+        </div>
+
+        
+        <div class="location">
+            <h5>الفرع الاول: رام الله - دوار المنارة - شارع ركب - عمارة طنوس - الطابق الارضي</h5>
+            <h5>الفرع الثاني: عين مصباح - شارع المسجد - بجانب الطوارىء  </h5>
+        </div>
+
+        
+        <p class="scan-date">تم مسح الكود في: <span id="date"></span></p>
+    </div>
+
+   <script>
+        document.getElementById('date').innerText = new Date().toLocaleString('ar-EG');
+        
+        function connectWifi() {
+            try {
+                // تشفير اسم الشبكة بشكل صحيح
+                const ssid = encodeURIComponent("Twitter Store");
+                const password = "naya0599";
+                window.location.href = `WIFI:T:WPA;S:${ssid};P:${password};;`;
+                
+                // نسخ كلمة السر تلقائياً
+                navigator.clipboard.writeText(password).then(() => {
+                    console.log("تم نسخ كلمة السر");
+                });
+                
+            } catch(e) {
+                alert("الرجاء الضغط على زر الاتصال بالشبكة يدوياً وإدخال كلمة السر: naya0599");
+            }
+        }
+    </script>
+</body>
+</html>
