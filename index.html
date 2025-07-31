@@ -7,7 +7,12 @@
      <style>
         
             body {
-                font-family: 'Tahoma', sans-serif;
+                background-image: url(/images/back.jpg);
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+                background-repeat: no-repeat;
+                font-family: Arial, sans-serif;
                 text-align: center;
                 padding: 20px;
                 background-color: #f9f9f9;
@@ -20,6 +25,7 @@
                 justify-content: space-between;
                 align-items: center;
                 margin-bottom: 20px;
+                font-size:  18px;
             }
 
             .logo {
@@ -41,6 +47,7 @@
             }
 
             .container {
+                
                 max-width: 500px;
                 margin: 0 auto; 
                 background: white;
@@ -118,7 +125,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <img src="images/logo_trans.png" alt="شعار تويتر ستور" class="logo">
+            <img src="/images/logo_trans.png" alt="شعار تويتر ستور" class="logo">
             <h1>أهلاً وسهلاً في تويتر ستور</h1>
         </div>
         
@@ -137,7 +144,7 @@
 
             <a href="https://www.tiktok.com/@twitter.store.ramallah?_t=ZS-8yUUGwD0d7o&_r=1" class="social-btn tiktok-btn">
                 تيك توك
-                <img src="images/t.png" alt="TikTok">
+                <img src="/images/t.png" alt="TikTok">
             </a>
             
             <a href="https://wa.me/972568202122" class="social-btn whatsapp-btn">
@@ -153,6 +160,7 @@
 
         
         <div class="location">
+            <br>
             <h5>الفرع الاول: رام الله - دوار المنارة - شارع ركب - عمارة طنوس - الطابق الارضي</h5>
             <h5>الفرع الثاني: عين مصباح - شارع المسجد - بجانب الطوارىء  </h5>
         </div>
@@ -166,12 +174,10 @@
         
         function connectWifi() {
             try {
-                // تشفير اسم الشبكة بشكل صحيح
                 const ssid = encodeURIComponent("Twitter Store");
                 const password = "naya0599";
                 window.location.href = `WIFI:T:WPA;S:${ssid};P:${password};;`;
                 
-                // نسخ كلمة السر تلقائياً
                 navigator.clipboard.writeText(password).then(() => {
                     console.log("تم نسخ كلمة السر");
                 });
